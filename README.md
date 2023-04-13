@@ -11,3 +11,5 @@ An admin panel to add, delete or modify teas / products in the store
 
 ## Conclusion
 T is a great ecommerce website for anyone who loves high quality teas. With its wide selection of teas and along with its user-friendly interface it's a great site for anyone who wants to explore the world of tea.
+
+#### Made by Matan Dessaur
