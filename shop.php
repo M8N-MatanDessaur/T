@@ -1,3 +1,8 @@
+<?php ini_set('display_errors', 0);
+require_once './autoloader.php'; // Load classes automatically
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,22 +13,6 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>T&nbsp;&nbsp;|&nbsp;&nbsp;Our products</title>
 </head>
-
-<?php
-ini_set('display_errors', 0);
-include('./includes/includes.php');
-session_start();
-session_regenerate_id();
-
-// if client is connected, create a cart object in session
-if (isset($_SESSION['user'])) {
-    $cart = $_SESSION['cart'];
-}
-// else bring user to login page
-else {
-    header('Location: ./login.php');
-}
-?>
 
 <body>
     <?php include('./views/Identification.php') ?>

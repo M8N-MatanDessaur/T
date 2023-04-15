@@ -1,3 +1,8 @@
+<?php ini_set('display_errors', 0);
+require_once './autoloader.php';  // Load classes automatically
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,27 +11,6 @@
     <title>T&nbsp;&nbsp;|&nbsp;&nbsp;Cart</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
-
-<?php
-ini_set('display_errors', 0);
-include('./includes/includes.php');
-session_start();
-
-if (isset($_SESSION['user'])) {
-    $cart = new Cart();
-
-    //handling the removal of a product from a user's shopping cart
-    if (isset($_POST['remove-from-cart'])) {
-        $product_id = $_POST['product_id'];
-        $cart->removeFromCart($product_id);
-    }
-}
-// if user isn't connected, send user to login
-else {
-    header('Location: ./login.php');
-}
-
-?>
 
 <body>
     <?php include('./views/Identification.php') ?>
